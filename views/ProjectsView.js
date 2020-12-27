@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { useAuth } from "../providers/AuthProvider";
 import { ListItem } from "react-native-elements";
 
@@ -16,7 +16,8 @@ export function ProjectsView({ navigation }) {
   };
 
   return (
-    <View>
+    <View style={{flex: 1}}>
+      <ScrollView>
       {projectData.map((project) => (
         <View key={project.name}>
           <ListItem
@@ -27,6 +28,10 @@ export function ProjectsView({ navigation }) {
           />
         </View>
       ))}
+      </ScrollView>
+        <View>
+          <Text>Footer</Text>
+        </View>
     </View>
   );
 }
